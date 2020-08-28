@@ -30,7 +30,7 @@ def get_db_engine(settings):
 
     returns
     -------
-        engine: postgresql engine
+    engine: postgresql engine
     """
     
     user = settings['PG_USER']
