@@ -12,9 +12,39 @@ import numpy as np
 import pandas as pd
 import geopandas as gpd
 
-from util import timeit
+# from util import timeit
 
-from zoneid import get_db_engine
+# from zoneid import get_db_engine
+
+def get_db_engine(settings):
+    """return db engine
+    
+    parameters
+    ----------
+    settings: dict
+        {'PG_USER': 'rxy_user',
+         'PG_PASSWORD': 'rxy',
+         'PG_HOST': 'localhost',
+         'PG_PORT': '5432',
+         'PG_DATABASE': 'census_block_groups'}
+
+    returns
+    -------
+        engine: postgresql engine
+    """
+    
+    user = settings['PG_USER']
+    passwd = settings['PG_PASSWORD']
+    host = settings['PG_HOST']
+    port = settings['PG_PORT']
+    db = settings['PG_DATABASE']
+    
+    url = 'postgresql://{user}:{passwd}@{host}:{port}/{db}'.format(
+        user=user, passwd=passwd, host=host, port=port, db=db)
+    
+    engine = create_engine(url, pool_size = 50)
+    
+    return engine
 
 def download_files(ftp_host, ftp_dir, dl_dir):
     """module that downloads files from ftp_dir of ftp_host into dl_dir
