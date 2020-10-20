@@ -165,7 +165,7 @@ def add_shapefile_to_db(shapefile_path, settings):
     """adds shapefiles specified in shapefiles_path to db FIXME
     
     Prerequisites:  - postgres installed on host machine
-                    - superuser sample_super_user
+                    - superuser sample_user
 
     parameters
     ----------
