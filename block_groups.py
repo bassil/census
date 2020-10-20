@@ -12,18 +12,14 @@ import numpy as np
 import pandas as pd
 import geopandas as gpd
 
-# from util import timeit
-
-# from zoneid import get_db_engine
-
 def get_db_engine(settings):
     """return db engine
     
     parameters
     ----------
     settings: dict
-        {'PG_USER': 'rxy_user',
-         'PG_PASSWORD': 'rxy',
+        {'PG_USER': 'sample_user',
+         'PG_PASSWORD': 'sample_pw',
          'PG_HOST': 'localhost',
          'PG_PORT': '5432',
          'PG_DATABASE': 'census_block_groups'}
@@ -169,7 +165,7 @@ def add_shapefile_to_db(shapefile_path, settings):
     """adds shapefiles specified in shapefiles_path to db FIXME
     
     Prerequisites:  - postgres installed on host machine
-                    - superuser rxy_user
+                    - superuser sample_super_user
 
     parameters
     ----------
@@ -178,8 +174,8 @@ def add_shapefile_to_db(shapefile_path, settings):
         "/Users/bassil.tabidi/Desktop/work/zipfiles/unzipped/tl_2019_01_bg/tl_2019_01_bg.shp"
     settings: dictionary {string: string}
         e.g., 
-        {'PG_USER': 'rxy_user',
-         'PG_PASSWORD': 'rxy',
+        {'PG_USER': 'sample_user',
+         'PG_PASSWORD': 'sample_pw',
          'PG_HOST': 'localhost',
          'PG_PORT': '5432',
          'PG_DATABASE': 'census_block_groups'}
@@ -254,8 +250,8 @@ def add_block_group_id_to_clusters(clusters, settings):
             latitude          float64
             longitude         float64
     settings: dictionary {string: string}
-        {'PG_USER': 'rxy_user',
-         'PG_PASSWORD': 'rxy',
+        {'PG_USER': 'sample_user',
+         'PG_PASSWORD': 'sample_pw',
          'PG_HOST': 'localhost',
          'PG_PORT': '5432',
          'PG_DATABASE': 'census_block_groups'}
@@ -302,8 +298,8 @@ def add_block_group_id_to_clusters(clusters, settings):
 # ftp_host = 'ftp2.census.gov'
 # ftp_dir = 'geo/tiger/TIGER2019/BG'
 # dl_dir = '/Users/bassil.tabidi/Desktop/work/zipfiles'
-# settings = {'PG_USER': 'rxy_user',
-#             'PG_PASSWORD': 'rxy',
+# settings = {'PG_USER': 'sample_user',
+#             'PG_PASSWORD': 'sample_pw',
 #             'PG_HOST': 'localhost',
 #             'PG_PORT': '5432',
 #             'PG_DATABASE': 'census_block_groups'}
